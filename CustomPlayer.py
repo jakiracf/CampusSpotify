@@ -15,8 +15,14 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=SPOTIPY_CLIENT_ID,
                                                redirect_uri=SPOTIPY_REDIRECT_URI,
                                                scope=SCOPE))
 
+#////////////////////////////////ZALIJEPI LINK NA PLAYLIST//////////////////////////////////////
 playlist_id = 'https://open.spotify.com/playlist/63n4nPiyh3yxfgW8rHlKhZ?si=1484cc6d2dbd404a'
-local_mp3_path = r'C:\Users\Jakirac\Desktop\campusSpotify\Majmune Sound Effect #2.mp3'
+
+
+#//////////////////////////////FILE SE MORA ZVAT "reklama.mp3"//////////////////////////////////
+local_mp3_path = r'reklama.mp3'
+
+
 
 def get_playlist_tracks(playlist_id):
     tracks = []
