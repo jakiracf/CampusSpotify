@@ -6,7 +6,7 @@ import pygame
 # --USER DEPENDENT--
 SPOTIPY_CLIENT_ID = '9bd27e3b02a64a24a641008a5dac28e8'
 SPOTIPY_CLIENT_SECRET = 'a784f80562634486902b2111b0e895a5'
-SPOTIPY_REDIRECT_URI = 'http://127.0.0.1:5500/'
+SPOTIPY_REDIRECT_URI = 'https://campusspotify.onrender.com'
 SCOPE = 'user-modify-playback-state user-read-playback-state user-read-currently-playing playlist-read-private'
 
 # Initialize Spotipy client
