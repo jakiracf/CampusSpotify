@@ -4,12 +4,12 @@ import time
 import pygame
 
 # --USER DEPENDENT--
-SPOTIPY_CLIENT_ID = '9bd27e3b02a64a24a641008a5dac28e8'
-SPOTIPY_CLIENT_SECRET = 'a784f80562634486902b2111b0e895a5'
+SPOTIPY_CLIENT_ID = '******************'
+SPOTIPY_CLIENT_SECRET = '*******************'
 SPOTIPY_REDIRECT_URI = 'https://campusspotify.onrender.com'
 SCOPE = 'user-modify-playback-state user-read-playback-state user-read-currently-playing playlist-read-private'
 
-# Initialize Spotipy client
+
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=SPOTIPY_CLIENT_ID,
                                                client_secret=SPOTIPY_CLIENT_SECRET,
                                                redirect_uri=SPOTIPY_REDIRECT_URI,
@@ -78,13 +78,13 @@ def main():
     played_tracks = set()
     
     for i in range(0, len(shuffled_tracks), 10):
-        # Extract next 10 tracks
+        
         track_ids = [track['track']['uri'] for track in shuffled_tracks[i:i+10]]
         
-        # Start playing the tracks
+        
         play_spotify_tracks(track_ids)
         
-        # Count played tracks (monitoring for skipping)
+        
         while len(played_tracks) < (i + 10):
             current_playback = sp.current_playback()
             if current_playback and current_playback['is_playing']:
@@ -95,7 +95,7 @@ def main():
                 played_tracks.add(track_id)
                 print(f"Track {len(played_tracks)}: {track_id} played.")
                 
-                # If 10 tracks have been played, pause and play the local mp3
+                
                 if len(played_tracks) == i + 10:
                     pause_and_resume_with_local_mp3(current_track_uri, current_position_ms)
 
